@@ -35,12 +35,7 @@ export default function TodoForm() {
   }
   const onNewQuote = evt => {
     evt.preventDefault()
-    const newQuote = {
-      ...state, 
-      apocryphal: false,
-      id: getNextId(),
-    }
-    dispatchRedux(createQuote(newQuote))
+    dispatchRedux(createQuote(state))
     resetForm()
   }
 

@@ -48,8 +48,20 @@ export const quotesSlice = createSlice({
       const quoteToEdit = state.quotes.find(qt => qt.id === action.payload)
       quoteToEdit.apocryphal = !quoteToEdit.apocryphal
     },
-    createQuote(state, action) {
-      state.quotes.push(action.payload)
+    createQuote: {
+      prepare({ authorName, quoteText }) {
+        return {
+          payload: {
+            authorName,
+            quoteText,
+            apocryphal: false,
+            id: getNextId()
+          }
+        }
+      },
+      reducer(state, action) {
+        state.quotes.push(action.payload)
+      }
     }
   }
 })
