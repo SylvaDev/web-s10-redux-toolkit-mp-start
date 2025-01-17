@@ -44,7 +44,7 @@ export default function Quotes() {
           !quotes?.length && "No quotes here! Go write some."
         }
       </div>
-      {!!quotes?.length && <button onClick={() => dispatch(toggleVisibility())}>
+      {!!quotes?.length && <button className='hideall' onClick={() => dispatch(toggleVisibility())}>
         {displayAllQuotes ? 'HIDE' : 'SHOW'} FAKE QUOTES
       </button>}
     </div>

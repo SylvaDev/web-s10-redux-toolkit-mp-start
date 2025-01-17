@@ -61,7 +61,7 @@ export default function TodoForm() {
         />
       </label>
       <label><span>Create quote:</span>
-        <button
+        <button className='animated-button'
           role='submit'
           disabled={!state.authorName.trim() || !state.quoteText.trim()}
         >DO IT!</button>
